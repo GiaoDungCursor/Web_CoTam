@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 98%;
+    --foreground: 225 18% 12%;
+    
+    --primary: 258 78% 57%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 220 16% 92%;
+    --secondary-foreground: 225 18% 18%;
+    
+    --accent: 173 70% 42%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 220 16% 92%;
+    --muted-foreground: 225 10% 42%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    
+    --border: 220 15% 86%;
+    --input: 220 15% 86%;
+    --ring: 258 78% 57%;
+    --destructive: 0 72% 52%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 225 22% 8%;
+    --foreground: 220 28% 96%;
+    
+    --primary: 258 80% 68%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 225 16% 16%;
+    --secondary-foreground: 220 28% 96%;
+    
+    --accent: 174 66% 46%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 225 16% 16%;
+    --muted-foreground: 220 12% 70%;
+    
+    --card: 225 20% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --border: 225 14% 20%;
+    --input: 225 14% 20%;
+    --ring: 258 80% 68%;
+    --destructive: 0 72% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  input,
+  textarea,
+  select {
+    color-scheme: light;
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-sm;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .theme-transition {
+    @apply transition-colors duration-200;
+  }
+}
